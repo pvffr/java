@@ -7,8 +7,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>bdic3-webapp</artifactId>
-    <name>Web Application</name>
-    <description>Yet another incredible Tobacco application</description>
+    <name>BDIC3-2014</name>
+    <description>PBL-ITA 2014 - BDIC3</description>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>war</packaging>
@@ -70,7 +70,6 @@
         <jackson.version>2.1.2</jackson.version>
         <urlrewritefilter.version>4.0.4</urlrewritefilter.version>
 
-        <eclipselink.version>2.4.1</eclipselink.version>
         <hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
 
         <junit.version>4.11</junit.version>
@@ -84,7 +83,6 @@
         <commons.codec.version>1.7</commons.codec.version>
         <joda.time.version>2.1</joda.time.version>
 
-        <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
         <jasperreports.version>5.0.0</jasperreports.version>
         <groovy.version>2.0.5</groovy.version>
         <guava.version>13.0.1</guava.version>
@@ -92,9 +90,20 @@
         <mail.version>1.4.5</mail.version>
 
         <dust4j.version>0.5.2</dust4j.version>
+        
+        <mysql.version>5.1.30</mysql.version>
+        
+        <hibernate.version>4.3.5.Final</hibernate.version>
     </properties>
 
     <dependencies>
+    
+    	<!-- MySQL -->
+    	<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
 
         <!-- JUnit 4 -->
         <dependency>
@@ -235,6 +244,11 @@
             <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
+         <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-beans</artifactId>
+	        <version>${spring.version}</version>
+	    </dependency>
 
         <!-- optional spring instrument support, http://static.springsource.com/projects/instrumentation/instrument/html/ch02s05.html -->
         <!--
@@ -447,18 +461,12 @@
             </exclusions>
         </dependency>
 
-        <!-- EclipseLink JPA provider for ORM -->
         <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>eclipselink</artifactId>
-            <version>${eclipselink.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>javax.persistence</artifactId>
-            <version>2.0.4.v201112161009</version>
-        </dependency>
-
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+        
         <!-- Hibernate Validator for extra JSR303 annotations -->
         <dependency>
             <groupId>org.hibernate</groupId>
