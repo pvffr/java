@@ -2,9 +2,13 @@ package br.com.ita.bdic3.entity.transacao;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
-
-import java.sql.Timestamp;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "TRANSACAO")
@@ -14,8 +18,20 @@ public class Transacao implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	@Column(name = "tra_id")
+	private Long id;
+	
+	public Transacao() { }
+	
+	public Long getId() {
+		return this.id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
 
+	/*
 	@Column(name = "ano_validade")
 	private String anoValidade;
 
@@ -25,7 +41,7 @@ public class Transacao implements Serializable {
 	private String codigoSeguranca;
 
 	@Column(name = "data_hora")
-	private Timestamp dataHora;
+	private Calendar dataHora;
 
 	@Column(name = "identificacao_receita_federal")
 	private String identificacaoReceitaFederal;
@@ -54,16 +70,6 @@ public class Transacao implements Serializable {
 
 	private double valor;
 
-	public Transacao() {
-	}
-
-	public int getId() {
-		return this.id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getAnoValidade() {
 		return this.anoValidade;
@@ -184,7 +190,7 @@ public class Transacao implements Serializable {
 
 	public void setValor(double valor) {
 		this.valor = valor;
-	}
+	}*/
 
 	@Override
 	public String toString() {

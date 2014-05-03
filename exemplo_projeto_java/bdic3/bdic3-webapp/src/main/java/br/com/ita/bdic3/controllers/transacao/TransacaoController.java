@@ -19,10 +19,10 @@ public class TransacaoController {
 	
 	/** http://localhost:8080/bdic3/transacao/transacao/32 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public @ResponseBody String efetuarTransacao(@PathVariable String id) {
+	public @ResponseBody String efetuarTransacao(@PathVariable Long id) {
 		
 		Transacao transacao = new Transacao();
-		transacao.setId(Integer.parseInt(id));
+		transacao.setId(id);
 		
 		transacaoDao.save(transacao);
 		

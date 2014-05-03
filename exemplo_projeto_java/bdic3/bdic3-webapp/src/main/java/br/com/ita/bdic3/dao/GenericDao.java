@@ -68,7 +68,7 @@ public class GenericDao<PK extends Serializable, T> {
 	}
 	
 	public Session getSession() {
-	    return sessionFactory.getCurrentSession();
+	    return sessionFactory.openSession();
 	}
 
 	public void setSessionFactory(SessionFactory session) {
