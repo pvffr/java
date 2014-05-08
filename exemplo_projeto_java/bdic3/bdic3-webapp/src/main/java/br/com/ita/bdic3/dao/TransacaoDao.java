@@ -1,15 +1,13 @@
-package br.com.ita.bdic3.dao.transacao;
+package br.com.ita.bdic3.dao;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.ita.bdic3.dao.GenericDao;
-import br.com.ita.bdic3.entity.transacao.Transacao;
+import br.com.ita.bdic3.entity.Transacao;
 
 /**
  * @author Paulo Vitor Faria Fortes Rezende
  * 
  */
-
 @Repository("transacaoDao")
 public class TransacaoDao extends GenericDao<Long, Transacao> {
 

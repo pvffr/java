@@ -43,11 +43,18 @@
             <id>debug</id>
             <properties>
                 <build.profile>debug</build.profile>
+                <!-- 
                 <eclipselink.logging.level>FINE</eclipselink.logging.level>
                 <log.level>DEBUG</log.level>
                 <spring.log.level>DEBUG</spring.log.level>
                 <service.log.level>DEBUG</service.log.level>
-                <serialization.log.level>TRACE</serialization.log.level>
+                <serialization.log.level>TRACE</serialization.log.level> 
+                -->
+                <eclipselink.logging.level>FINE</eclipselink.logging.level>
+                <log.level>DEBUG</log.level>
+                <spring.log.level>INFO</spring.log.level>
+                <service.log.level>DEBUG</service.log.level>
+                <serialization.log.level>INFO</serialization.log.level>
             </properties>
         </profile>
     </profiles>
@@ -90,13 +97,25 @@
         <mail.version>1.4.5</mail.version>
 
         <dust4j.version>0.5.2</dust4j.version>
-        
         <mysql.version>5.1.30</mysql.version>
-        
         <hibernate.version>4.3.5.Final</hibernate.version>
+        <jackson.databind-version>2.2.3</jackson.databind-version>
     </properties>
 
     <dependencies>
+    	<!-- HttpClient -->
+    	<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+    
+    	<!-- Jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.databind-version}</version>
+        </dependency>
     
     	<!-- MySQL -->
     	<dependency>
