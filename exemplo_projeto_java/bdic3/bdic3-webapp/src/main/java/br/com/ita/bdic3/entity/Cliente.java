@@ -3,6 +3,7 @@ package br.com.ita.bdic3.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -27,17 +28,11 @@ public class Cliente implements Serializable{
 	@Column(name = "cli_id")
 	private Long id;
 	
-	@Column(name = "cli_primeironome")
-	private String primeiroNome;
+	@Column(name = "cli_nome")
+	private String nome;
 	
-	@Column(name = "cli_ultimonome")
-	private String ultimoNome;
-	
-	@Column(name = "cli_telefone")
-	private String telefone;
-	
-	@Column(name = "cli_celular")
-	private String celular;
+	@Column(name = "cli_documento")
+	private String documento;
 	
 	@Enumerated(EnumType.STRING)
 	private Sexo sexo;
@@ -48,9 +43,6 @@ public class Cliente implements Serializable{
 	@Column(name = "cli_rg")
 	private String rg;
 	
-	@Column(name = "cli_documento")
-	private String documento;
-	
 	@Column(name = "cli_renda")
 	private String renda;
 	
@@ -60,13 +52,13 @@ public class Cliente implements Serializable{
 	@Column(name = "cli_token")
 	private String token;
 	
-	@OneToMany(mappedBy = "cli_id")
+	@OneToMany(mappedBy = "cli_id", cascade = CascadeType.ALL)
 	private List<EnderecoCliente> enderecos;
 	
-	@OneToMany(mappedBy = "cli_id")
+	@OneToMany(mappedBy = "cli_id", cascade = CascadeType.ALL)
 	private List<Telefone> telefones;
 
-	@OneToOne(mappedBy = "")
+	@OneToOne(mappedBy = "cli_id")
 	private Usuario usuario;
 
 	public Long getId() {
@@ -77,36 +69,20 @@ public class Cliente implements Serializable{
 		this.id = id;
 	}
 
-	public String getPrimeiroNome() {
-		return primeiroNome;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setPrimeiroNome(String primeiroNome) {
-		this.primeiroNome = primeiroNome;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getUltimoNome() {
-		return ultimoNome;
+	public String getDocumento() {
+		return documento;
 	}
 
-	public void setUltimoNome(String ultimoNome) {
-		this.ultimoNome = ultimoNome;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
-	public String getCelular() {
-		return celular;
-	}
-
-	public void setCelular(String celular) {
-		this.celular = celular;
+	public void setDocumento(String documento) {
+		this.documento = documento;
 	}
 
 	public Sexo getSexo() {
@@ -131,14 +107,6 @@ public class Cliente implements Serializable{
 
 	public void setRg(String rg) {
 		this.rg = rg;
-	}
-
-	public String getDocumento() {
-		return documento;
-	}
-
-	public void setDocumento(String documento) {
-		this.documento = documento;
 	}
 
 	public String getRenda() {
@@ -188,4 +156,6 @@ public class Cliente implements Serializable{
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	
 }

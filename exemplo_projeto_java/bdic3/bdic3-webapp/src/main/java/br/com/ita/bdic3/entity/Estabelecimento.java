@@ -1,5 +1,6 @@
 package br.com.ita.bdic3.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -31,7 +32,7 @@ public class Estabelecimento {
 	@Column(name = "etb_cnpj")
 	private String cnpj;
 	
-	@OneToOne(mappedBy = "etb_id")
+	@OneToOne(mappedBy = "etb_id", cascade = CascadeType.ALL)
 	private EnderecoEstabelecimento endereco;
 	
 	@Column(name = "etb_email")

@@ -1,5 +1,6 @@
 package br.com.ita.bdic3.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,7 +30,7 @@ public class Endereco {
 	
 	private String pais;
 	
-	@OneToOne
+	@OneToOne(mappedBy = "end_id", cascade = CascadeType.ALL)
 	private Localidade localidade;
 	
 	public Long getId() {

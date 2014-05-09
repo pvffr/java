@@ -16,12 +16,6 @@ public class Usuario {
 	@Column(name = "usu_id")
 	private Long id;
 	
-	@Column(name = "cli_nome")
-	private String nome;
-	
-	@Column(name = "usu_documento")
-	private String documento;
-	
 	@Column(name = "usu_email")
 	private String email;
 	
@@ -34,22 +28,6 @@ public class Usuario {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getDocumento() {
-		return documento;
-	}
-
-	public void setDocumento(String documento) {
-		this.documento = documento;
 	}
 
 	public String getEmail() {

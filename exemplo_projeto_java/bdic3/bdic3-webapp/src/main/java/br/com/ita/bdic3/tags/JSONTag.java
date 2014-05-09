@@ -1,11 +1,13 @@
 package br.com.ita.bdic3.tags;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.springframework.web.servlet.tags.RequestContextAwareTag;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 
+@SuppressWarnings("serial")
 public class JSONTag extends RequestContextAwareTag {
 
     private Object val;
