@@ -32,15 +32,14 @@ public class Pagamento {
 	@Column(name = "pag_valor_pagamento")
 	private BigDecimal valorPagamento;
 	
-	@OneToOne
-	@Column(name = "loc_id")
-	private Localidade localidade;
+//	@OneToOne(mappedBy = "loc_id")
+//	private Localidade localidade;
 	
-	@Column(name = "cdc_id")
-	private Cliente cliente;
+//	@Column(name = "cdc_id")
+//	private Cliente cliente;
 	
-	@Column(name = "ped_id")
-	private Pedido pedido;
+//	@Column(name = "ped_id")
+//	private Pedido pedido;
 
 	public Long getId() {
 		return id;
@@ -80,29 +79,5 @@ public class Pagamento {
 
 	public void setValorPagamento(BigDecimal valorPagamento) {
 		this.valorPagamento = valorPagamento;
-	}
-
-	public Localidade getLocalidade() {
-		return localidade;
-	}
-
-	public void setLocalidade(Localidade localidade) {
-		this.localidade = localidade;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public Pedido getPedido() {
-		return pedido;
-	}
-
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
 	}
 }

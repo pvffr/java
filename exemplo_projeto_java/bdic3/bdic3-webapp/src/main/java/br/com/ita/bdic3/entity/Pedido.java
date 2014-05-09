@@ -10,19 +10,19 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "PEDIDO")
+//@Entity
+//@Table(name = "PEDIDO")
 public class Pedido {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ped_id")
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Column(name = "ped_id")
 	private Long id;
 	
-	@Column(name = "ped_dt")
+//	@Column(name = "ped_dt")
 	private Calendar data;
 
-	@ManyToOne
+//	@ManyToOne
 	private Cliente cliente;
 
 	public Long getId() {
@@ -47,5 +47,13 @@ public class Pedido {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+	
+	@Override
+	public String toString() {
+		return "Pedido=[id="+ id
+				+ "data=" + data.toString()
+//				+ "cliente=" + cliente.getNome()
+				+ "]";
 	}
 }

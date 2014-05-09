@@ -52,14 +52,14 @@ public class Cliente implements Serializable{
 	@Column(name = "cli_token")
 	private String token;
 	
-	@OneToMany(mappedBy = "cli_id", cascade = CascadeType.ALL)
-	private List<EnderecoCliente> enderecos;
+//	@OneToMany(mappedBy = "cli_id", cascade = CascadeType.ALL)
+//	private List<EnderecoCliente> enderecos;
 	
-	@OneToMany(mappedBy = "cli_id", cascade = CascadeType.ALL)
-	private List<Telefone> telefones;
+//	@OneToMany(mappedBy = "cli_id", cascade = CascadeType.ALL)
+//	private List<Telefone> telefones;
 
-	@OneToOne(mappedBy = "cli_id")
-	private Usuario usuario;
+//	@OneToOne(mappedBy = "id")
+//	private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -133,29 +133,4 @@ public class Cliente implements Serializable{
 		this.token = token;
 	}
 
-	public List<EnderecoCliente> getEnderecos() {
-		return enderecos;
-	}
-
-	public void setEnderecos(List<EnderecoCliente> enderecos) {
-		this.enderecos = enderecos;
-	}
-
-	public List<Telefone> getTelefones() {
-		return telefones;
-	}
-
-	public void setTelefones(List<Telefone> telefones) {
-		this.telefones = telefones;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-
-	
 }

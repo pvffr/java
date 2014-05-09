@@ -32,8 +32,8 @@ public class Estabelecimento {
 	@Column(name = "etb_cnpj")
 	private String cnpj;
 	
-	@OneToOne(mappedBy = "etb_id", cascade = CascadeType.ALL)
-	private EnderecoEstabelecimento endereco;
+//	@OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
+//	private EnderecoEstabelecimento endereco;
 	
 	@Column(name = "etb_email")
 	private String email;
@@ -68,14 +68,6 @@ public class Estabelecimento {
 
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
-	}
-
-	public EnderecoEstabelecimento getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(EnderecoEstabelecimento endereco) {
-		this.endereco = endereco;
 	}
 
 	public String getEmail() {

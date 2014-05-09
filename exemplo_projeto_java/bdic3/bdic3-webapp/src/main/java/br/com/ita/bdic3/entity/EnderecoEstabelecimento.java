@@ -6,7 +6,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class EnderecoEstabelecimento extends Endereco {
 
-	@ManyToOne
+/*	@ManyToOne
 	private Estabelecimento estabelecimento;
 
 	public Estabelecimento getEstabelecimento() {
@@ -15,6 +15,6 @@ public class EnderecoEstabelecimento extends Endereco {
 
 	public void setEstabelecimento(Estabelecimento estabelecimento) {
 		this.estabelecimento = estabelecimento;
-	}
+	}*/
 
 }

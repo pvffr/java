@@ -5,9 +5,9 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class EnderecoCliente extends Endereco {
-
-	@ManyToOne
-	private Cliente cliente;
+/*
+//	@ManyToOne
+//	private Cliente cliente;
 
 	public Cliente getCliente() {
 		return cliente;
@@ -15,5 +15,5 @@ public class EnderecoCliente extends Endereco {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
-	}
+	}*/
 }

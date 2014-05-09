@@ -53,23 +53,23 @@ public class Transacao implements Serializable {
 	@Column(name = "tra_quantidadeparcela")
 	private int quantidadeParcelas;
 	
-	@ManyToOne
-	private Cliente cliente;
+//	@ManyToOne
+//	private Cliente cliente;
 	
-	@ManyToOne
-	private Localidade localidade;
+//	@ManyToOne
+//	private Localidade localidade;
 	
-	@ManyToOne
-	private Estabelecimento estabelecimento;
+//	@ManyToOne
+//	private Estabelecimento estabelecimento;
 	
-	@ManyToOne
-	private Midia midia;
+//	@ManyToOne
+//	private Midia midia;
 	
-	@ManyToOne
-	private Sessao sessao;
+//	@ManyToOne
+//	private Sessao sessao;
 	
-	@ManyToOne
-	private MeioPagamento meioPagamento;
+//	@ManyToOne
+//	private MeioPagamento meioPagamento;
 
 	public Long getId() {
 		return id;
@@ -142,7 +142,7 @@ public class Transacao implements Serializable {
 	public void setQuantidadeParcelas(int quantidadeParcelas) {
 		this.quantidadeParcelas = quantidadeParcelas;
 	}
-
+/*
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -189,5 +189,5 @@ public class Transacao implements Serializable {
 
 	public void setMeioPagamento(MeioPagamento meioPagamento) {
 		this.meioPagamento = meioPagamento;
-	}
+	}*/
 }

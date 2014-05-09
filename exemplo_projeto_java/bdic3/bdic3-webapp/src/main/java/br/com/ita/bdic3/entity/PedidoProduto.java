@@ -7,8 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "PEDIDO_HAS_PRODUTO")
+//@Entity
+//@Table(name = "PEDIDO_HAS_PRODUTO")
 public class PedidoProduto {
 	
 	@OneToOne(mappedBy = "ped_id")

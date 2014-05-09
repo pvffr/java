@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -11,6 +14,8 @@ import javax.persistence.Table;
 @Table(name = "MIDIA")
 public class Midia {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "mid_id")
 	private  Long id;
 	
@@ -38,11 +43,11 @@ public class Midia {
 	@Column(name = "mid_codigoseguranca")
 	private String codigoSeguranca;
 
-	@OneToOne
-	private  OperadoraCartao operadoraCartao;
+//	@OneToOne(mappedBy = "odc_id")
+//	private  OperadoraCartao operadoraCartao;
 	
-	@OneToOne
-	private  Cliente cliente;
+//	@OneToOne(mappedBy = "cli_id")
+//	private  Cliente cliente;
 
 	public Long getId() {
 		return id;
@@ -116,21 +121,4 @@ public class Midia {
 		this.codigoSeguranca = codigoSeguranca;
 	}
 
-	public OperadoraCartao getOperadoraCartao() {
-		return operadoraCartao;
-	}
-
-	public void setOperadoraCartao(OperadoraCartao operadoraCartao) {
-		this.operadoraCartao = operadoraCartao;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	
 }

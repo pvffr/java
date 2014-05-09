@@ -20,8 +20,8 @@ public class MeioPagamentoEstabelecimento {
 	@Column(name = "mpe_token")
 	private String token;
 
-	@ManyToOne
-	private Estabelecimento estabelecimento;
+//	@ManyToOne
+//	private Estabelecimento estabelecimento;
 
 	public Long getId() {
 		return id;
@@ -37,13 +37,5 @@ public class MeioPagamentoEstabelecimento {
 
 	public void setToken(String token) {
 		this.token = token;
-	}
-
-	public Estabelecimento getEstabelecimento() {
-		return estabelecimento;
-	}
-
-	public void setEstabelecimento(Estabelecimento estabelecimento) {
-		this.estabelecimento = estabelecimento;
 	}
 }

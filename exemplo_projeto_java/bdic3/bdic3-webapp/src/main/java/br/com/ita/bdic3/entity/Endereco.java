@@ -30,8 +30,8 @@ public class Endereco {
 	
 	private String pais;
 	
-	@OneToOne(mappedBy = "end_id", cascade = CascadeType.ALL)
-	private Localidade localidade;
+//	@OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
+//	private Localidade localidade;
 	
 	public Long getId() {
 		return id;
@@ -95,14 +95,6 @@ public class Endereco {
 
 	public void setPais(String pais) {
 		this.pais = pais;
-	}
-
-	public Localidade getLocalidade() {
-		return localidade;
-	}
-
-	public void setLocalidade(Localidade localidade) {
-		this.localidade = localidade;
 	}
 
 }

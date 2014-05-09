@@ -74,7 +74,7 @@
         <spring-mobile.version>1.0.1.RELEASE</spring-mobile.version>
         <aspectj.version>1.7.1</aspectj.version>
         <cglib.version>3.0</cglib.version>
-        <jackson.version>2.1.2</jackson.version>
+        <jackson.version>2.2.3</jackson.version>
         <urlrewritefilter.version>4.0.4</urlrewritefilter.version>
 
         <hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
@@ -99,7 +99,6 @@
         <dust4j.version>0.5.2</dust4j.version>
         <mysql.version>5.1.30</mysql.version>
         <hibernate.version>4.3.5.Final</hibernate.version>
-        <jackson.databind-version>2.2.3</jackson.databind-version>
     </properties>
 
     <dependencies>
@@ -109,13 +108,6 @@
 			<artifactId>commons-httpclient</artifactId>
 			<version>3.1</version>
 		</dependency>
-    
-    	<!-- Jackson -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.databind-version}</version>
-        </dependency>
     
     	<!-- MySQL -->
     	<dependency>
