@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +19,11 @@ import br.com.ita.bdic3.service.PedidoService;
 
 @Controller
 @RequestMapping("/api/pedidos")
-public class PedidoController {
+public class PedidoController extends GenericController<Pedido> {
+
+	public PedidoController(Class<Pedido> type) {
+		super(type);
+	}
 
 	@Autowired
 	private PedidoService pedidoService;
@@ -37,8 +40,11 @@ public class PedidoController {
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST, headers = {"Content-type=application/json"})
 	public @ResponseBody String create(@RequestBody String pedidoJSON) throws APIException, JsonParseException, JsonMappingException, IOException {
-		ObjectMapper mapper = new ObjectMapper();
-		Pedido pedido = mapper.readValue(pedidoJSON, Pedido.class);
+		
+		Pedido pedido = convertStringJsonToObject(pedidoJSON);
+		
+		pedidoService.save(pedido);
+		
 		return pedido.toString();
 	}
 	
