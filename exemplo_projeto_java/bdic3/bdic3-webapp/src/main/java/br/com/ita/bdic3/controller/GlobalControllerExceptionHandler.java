@@ -31,7 +31,7 @@ class GlobalControllerExceptionHandler {
 	}
  
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
-	@ExceptionHandler({Exception.class, JsonParseException.class, JsonMappingException.class, IOException.class})
+	@ExceptionHandler({JsonParseException.class, JsonMappingException.class, IOException.class})
 	public @ResponseBody APIJsonParserException handleJsonParserException(Exception ex) {
 		return new APIJsonParserException(HttpStatus.BAD_REQUEST.toString(), ex.getMessage());
 	}

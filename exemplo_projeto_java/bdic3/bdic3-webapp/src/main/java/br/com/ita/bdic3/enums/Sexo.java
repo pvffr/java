@@ -2,7 +2,7 @@ package br.com.ita.bdic3.enums;
 
 public enum Sexo {
 	
-	MASCULINO("M"), FEMININO("F");
+	M("MASCULINO"), F("FEMININO");
 
 	private String value;
 	

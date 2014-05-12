@@ -2,19 +2,29 @@ package br.com.ita.bdic3.entity;
 
 import java.util.Calendar;
 
-//@Entity
-//@Table(name = "PEDIDO")
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PEDIDO")
 public class Pedido {
 	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name = "ped_id")
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ped_id")
 	private Long id;
 	
-//	@Column(name = "ped_dt")
+	@Column(name = "ped_dt")
 	private Calendar data;
 
-//	@ManyToOne
+	@ManyToOne
+	@JoinColumn(name = "cli_id")
 	private Cliente cliente;
 
 	public Long getId() {
@@ -44,7 +54,7 @@ public class Pedido {
 	@Override
 	public String toString() {
 		return "Pedido=[id="+ id
-				+ "data=" + data.toString()
+				+ ", data=" + data.toString()
 //				+ "cliente=" + cliente.getNome()
 				+ "]";
 	}

@@ -21,8 +21,8 @@ import br.com.ita.bdic3.service.PedidoService;
 @RequestMapping("/api/pedidos")
 public class PedidoController extends GenericController<Pedido> {
 
-	public PedidoController(Class<Pedido> type) {
-		super(type);
+	public PedidoController() {
+		super(Pedido.class);
 	}
 
 	@Autowired
@@ -49,7 +49,11 @@ public class PedidoController extends GenericController<Pedido> {
 	}
 	
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-	public @ResponseBody String update(Pedido pedido) throws APIException {
+	public @ResponseBody String update(String pedidoJSON) throws APIException, JsonParseException, JsonMappingException, IOException {
+		
+		Pedido pedido = convertStringJsonToObject(pedidoJSON);
+		
+		pedidoService.update(pedido);
 		
 		return "";
 	}

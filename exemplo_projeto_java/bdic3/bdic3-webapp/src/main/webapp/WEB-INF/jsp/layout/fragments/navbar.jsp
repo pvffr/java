@@ -41,9 +41,19 @@ This is the dynamic remake of http://getbootstrap.com/components/#navbar
                 </c:choose>
             </c:forEach>
         </ul>
+       	<sec:authorize var="loggedIn" access="isAuthenticated()" /><%-- 
         <ul class="nav navbar-nav navbar-right">
-            <c:forEach var="item" items="contact">
-                <spring:message var="itemTitle" code="navbar.${item}.title"/>
+        	<c:choose>
+				<c:when test="${loggedIn}">
+	                <spring:message var="itemTitle" code="navbar.logout.title"/>
+	                <li><a href="<spring:url value="/j_spring_security_logout" />">${itemTitle}</a></li>
+        		</c:when>
+        		<c:otherwise>
+        			<spring:message var="itemTitle" code="navbar.login.title"/>
+        			<li class="active"><a href="<spring:url value="/login" />">${itemTitle}</a></li>
+        		</c:otherwise>        		
+        	</c:choose> --%>
+            <%-- <c:forEach var="item" items="login">
                 <c:choose>
                     <c:when test="${item eq selectedView}">
                         <li class="active"><a href="<spring:url value="/${item}" />">${itemTitle}</a></li>
@@ -52,7 +62,7 @@ This is the dynamic remake of http://getbootstrap.com/components/#navbar
                         <li><a href="<spring:url value="/${item}" />">${itemTitle}</a></li>
                     </c:otherwise>
                 </c:choose>
-            </c:forEach>
-        </ul>
+            </c:forEach> --%>
+        <!-- </ul> -->
     </div> <%-- /.navbar-collapse --%>
 </nav>
