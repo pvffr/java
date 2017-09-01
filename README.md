@@ -10,3 +10,6 @@ Link: http://tobacco.noroutine.me/
 
 Para rodar o projeto, execute o seguinte comando: cd <app-name>-webapps
 mvn package t7:run
+
+
+Oi amiguinho fala comigo mim disbloqueia? eu tenho tourette...
